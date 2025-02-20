@@ -1,5 +1,6 @@
 #ifndef TANQUE_HPP
 #define TANQUE_HPP
+#include <iostream>
 
 class Tanque {
 private:
@@ -12,6 +13,7 @@ public:
     Tanque(int limite) : limite(limite), atual(0) {}
 
     void Completar() {
+        std::cout << "Tanque está sendo completado" << std::endl; 
         atual = limite; // Completa o tanque até o limite
     }
 

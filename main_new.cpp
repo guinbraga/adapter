@@ -2,17 +2,19 @@
 #include <iostream>
 using namespace std;
 
-int main(){
-    Carro* carros = new Carro[2];
-    Carro corsa(100);
-    CarroEletrico byd(100);
-    carros[0] = corsa;
-    carros[1] = byd;
+int main() {
 
-    for (int i = 0; i<2; i++){
-        cout << "Nivel do combustivel atual: " << carros[i].tanque.getAtual() << endl;
-        if (carros[i].tanque.getAtual() < 50) carros[i].abastecer();
-        cout << "Nível do combustível após abastecer: " << carros[i].tanque.getAtual() << endl;
+    Carro* carros[2];
+    carros[0] = new Carro(100);
+    carros[1] = new CarroEletrico(100);  
+
+    // posto de gasolina
+    for (int i = 0; i < 2; i++) {
+        cout << "Nivel de combustivel atual: " << carros[i]->getNivelCombustivel() << endl;
+        if (carros[i]->getNivelCombustivel() < 50) carros[i]->abastecer();
+        cout << "Nivel de combustivel após abastecer: " << carros[i]->getNivelCombustivel() << endl << endl;
     }
 
+    delete carros[0];
+    delete carros[1];
 }

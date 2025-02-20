@@ -7,16 +7,18 @@ class Carro {
 public:
     Tanque tanque;
 
-    Carro(){}
-
+    Carro() {}
     Carro(int limiteTanque) : tanque(limiteTanque) {}
 
     virtual void abastecer() {
         tanque.Completar();
     }
-    
-    virtual ~Carro() = default; 
-    
+
+    virtual int getNivelCombustivel() {
+        return tanque.getAtual();
+    }
+
+    virtual ~Carro() = default;
 };
 
 #endif

@@ -2,18 +2,21 @@
 #define CARRO_ELETRICO_HPP
 
 #include "Carro.hpp"
-#include "Bateria.hpp"
+#include "Tanque_Bateria.hpp"
 
 class CarroEletrico : public Carro {
 public:
-    CarroEletrico(int capacidadeBateria) : Carro(capacidadeBateria), bateria(capacidadeBateria){}
+    Bateria bateria;
+
+    CarroEletrico(int capacidadeBateria) : Carro(0), bateria(capacidadeBateria) {}
 
     void abastecer() override {
         bateria.carregar_total();
-    }    
-    
-private:
-    Bateria bateria;
+    }
+
+    int getNivelCombustivel() {
+        return bateria.getAtualW();
+    }
 };
 
 #endif
