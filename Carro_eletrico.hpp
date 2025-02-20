@@ -6,7 +6,9 @@
 class CarroEletrico : public Carro {
 public:
     void carregar(int kwh); // Método específico para carregar o carro elétrico
-    void abastecer(int litros) override; // Override colocado para sobrepor
+    void abastecer(int litros) override{
+        
+    }; // Override colocado para sobrepor
 };
 
 #endif
