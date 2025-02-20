@@ -10,6 +10,6 @@ int main(){
     carros[1] = byd;
 
     // mostrando combustivel atual corsa
-    cout <<  
+    cout <<  //s
 
 }
