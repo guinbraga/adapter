@@ -1,10 +1,22 @@
-#ifndef Carro_hpp
-#define Carro_hpp
+#ifndef CARRO_HPP
+#define CARRO_HPP
+
+#include "Tanque.hpp"
 
 class Carro {
-    public:
-        virtual void abastecer(int litros) = 0;
-        virtual ~Carro() = default;
+public:
+    Tanque tanque;
+
+    Carro(){}
+
+    Carro(int limiteTanque) : tanque(limiteTanque) {}
+
+    virtual void abastecer() {
+        tanque.Completar();
+    }
+    
+    virtual ~Carro() = default; 
+    
 };
 
 #endif
